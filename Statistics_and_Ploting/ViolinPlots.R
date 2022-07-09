@@ -4,10 +4,10 @@ library(rstatix)
 library(tidyverse)
 
 
-data <- read.csv('/home/raphael/Desktop/Sebstständig/AnalysenStang/DatenKohorten.csv')
+data <- read.csv('DatenKohorten.csv')
 
 
-svg('/home/raphael/Desktop/Sebstständig/AnalysenStang/ViolinBMI.svg')
+svg('ViolinBMI.svg')
 my_comparisons <- list( c('Cachexia', 'no Chachexia'))
 ggplot(data, aes(x=Cachexia,y=BMI, fill=Cachexia))+
   geom_violin(trim=FALSE)+
@@ -21,7 +21,7 @@ ggplot(data, aes(x=Cachexia,y=BMI, fill=Cachexia))+
 
 dev.off()
   
-svg('/home/raphael/Desktop/Sebstständig/AnalysenStang/ViolinAge.svg')
+svg('ViolinAge.svg')
 ggplot(data, aes(x=Cachexia,y=Age, fill=Cachexia))+
   geom_violin(trim=FALSE)+
   geom_boxplot(width=0.1,fill="white")+
